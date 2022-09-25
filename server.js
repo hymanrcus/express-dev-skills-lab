@@ -6,7 +6,7 @@ import logger from 'morgan'
 
 // import routers
 import { router as indexRouter } from './routes/index.js'
-import { router as SkillsRouter } from './routes/Skills.js'
+import { router as skillsRouter } from './routes/skills.js'
 
 // set up app
 const app = express()
