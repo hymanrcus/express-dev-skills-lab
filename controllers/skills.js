@@ -5,7 +5,8 @@ function index(req, res) {
   Skill.find({})
   .then(skills => { 
     res.render('skills/index', {
-      skils: skills,
+      skills: skills,
+      date: req.date
     })
   })
   .catch(error => {
@@ -40,6 +41,17 @@ function show(req, res) {
   .catch(error => {
       console.log(error)
       res.redirect('/skills')
+  })
+}
+
+function deleteSkill(req, res) {
+  Skill.findByIdAndDelete(req.params.id)
+  .then(skill=> {
+    res.redirect('/skills')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/skills')
   })
 }
 
