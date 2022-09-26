@@ -5,10 +5,10 @@ const Schema = mongoose.Schema
 
 const skillSchema = new Schema({
   text: String,
-  done: Boollean
+  done: Boolean
 })
 
-const Skill = mongoose.model('Skill', slillSchema)
+const Skill = mongoose.model('Skill', skillSchema)
 
 export {
   Skill
