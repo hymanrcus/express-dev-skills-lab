@@ -55,9 +55,26 @@ function deleteSkill(req, res) {
   })
 }
 
+function edit(req, res) {
+  Skill.findById(req.params.id)
+  .then(skill => {
+    res.render("skills/edit", {
+      skill, // same as: movie: movie
+      title: "Edit Skill"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect("/")
+  })
+}
+
+
 export {
   index,
   newSkill as new,
   create,
-  show
+  show,
+  deleteSkill as delete,
+  edit
 }

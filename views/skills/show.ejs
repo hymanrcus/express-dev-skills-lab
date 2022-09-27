@@ -8,9 +8,12 @@
 </head>
 <body>
   <h1>Skills</h1>
-  <h2>Skill #<%=skill._id %></h2>
+  <h2>Skill #<%= skill._id %></h2>
+  <a href="/skills/<%= skill._id %>/edit">
+    <button>Edit Skill</button>
+  </a>
   <h3><%= skill.text %></h3>
-  <p>done: <%= skill.done ? 'Yes' : 'No' %></p>
+  <p>has: <%= skill.has ? 'Yes' : 'No' %></p>
   <a href="/skills">Go back</a>
 </body>
 </html>

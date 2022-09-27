@@ -19,12 +19,11 @@
           <button type="submit" class="delete-form">X</button>
         </form>
         <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
-				<%= skill.text %> 
 				- 
-				<%= skill.done ? 'done' : 'not done' %>
+				<%= skill.has ? 'have' : 'dont have' %>
 			</li>
     <% }) %>
-    <a href="/skills/new">Add Skill</a>
   </ul>
+  <a href="/skills/new">Add Skill</a>
 </body>
 </html>
