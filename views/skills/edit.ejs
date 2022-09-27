@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Skill</title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <form id="new-form" action="/skills/<%= skill._id %>?_method=PUT" method="POST">
+    <label for="skill-input">Skill:</label>
+    <input type="text" name="text" value="<%= skill.text %>" id="text-input">
+    <label for="has-checkbox">Has:</label>
+    <input 
+      type="checkbox"
+      name="has"
+      <%= skill.has ? 'checked' : '' %>
+      id="has-checkbox"
+    >
+    <button type="submit">Save Skill</button>
+  </form>
+</body>
+</html>
